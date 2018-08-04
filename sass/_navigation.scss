@@ -1,0 +1,298 @@
+/* == Links ================================================== */
+a {
+    color: $link-color;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+
+    @include transition(all $transTime ease);
+
+    &:active {
+        color: $link-active;
+    }
+
+    &:hover {
+        color: $link-hover;
+
+        @include transition(all $transTime ease);
+    }
+
+    &:visited {
+        color: $link-visited;
+    }
+}
+
+/* == Buttons ================================================ */
+button, .button {
+    border: 2px solid $dark-gray;
+    color: $dark-gray;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-sans-family;
+    font-size: ems(16px);
+    font-weight: 700;
+    letter-spacing: $font-base-kerning;
+    margin: 15px 0;
+    padding: 12px 15px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include transition(background-color $transTime ease);
+
+    @include border-radius(0);
+
+    &:hover {
+        background-color: $dark-gray;
+        color: $white;
+
+        @include transition(background-color $transTime ease);
+    }
+
+    &:visited {
+        color: $dark-gray;
+
+        &:hover {
+            color: $white;
+        }
+    }
+
+    &.white {
+        background: none;
+        border: 2px solid $white;
+        color: $white;
+
+        &:hover {
+            background-color: $white;
+            color: $dark-gray;
+
+            @include transition(background-color $transTime ease);
+        }
+    }
+}
+
+a.text-button {
+    color: $dark-blue;
+    font-weight: bold;
+
+    &:hover {
+        color: $light-blue;
+    }
+}
+
+/* == Header ================================================= */
+header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 25px;
+
+    .logo img {
+        margin-top: 5px;
+        max-width: 100px;
+    }
+
+    .menu {
+        font-family: $font-sans-family;
+        text-transform: uppercase;
+
+        ol {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+
+                a {
+                    color: $dark-gray;
+                    display: block;
+                    padding: 0 15px;
+                    font-size: ems(16px);
+                    font-weight: 400;
+
+                    &:hover {
+                        color: $light-gray;
+                    }
+
+                    &:visited {
+                        color: $dark-gray;
+                    }
+
+                    @media screen and (max-width: 750px) {
+                        padding: 0 10px;
+                    }               
+                }
+            }
+        }
+
+        .dimmer {
+            left: 100%;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            background-color: rgba(250, 250, 250, 0.8);
+
+            &.active {
+                display: block;
+                left: 50%;
+
+                @include transition(all $transTime ease);
+            }
+        }
+
+        .hamburger {
+            display: none;
+            z-index: 2;
+        }
+
+        @media screen and (max-width: 600px) {
+
+            ol {
+                background-color: $dark-blue;
+                bottom: 0;
+                display: block;
+                left: 0;
+                margin-left: -1000px;
+                position: fixed;
+                top: 0;
+                width: 80vw;
+                z-index: 20;
+
+                @include transition(margin-left $transTime ease);
+
+                &.active {
+                    margin-left: 0;
+                    overflow-y: scroll;
+
+                    @include transition(margin-left $transTime ease);
+                }
+
+                li {
+                    border-bottom: 1px solid $dark-gray;
+                    display: block;
+
+                    a {
+                        font-size: ems(20px);
+                        padding: 22px 25px;
+
+                        &:hover {
+                            color: $dark-gray;
+                            background-color: $light-blue;
+                        }
+                    }
+                }
+            }
+
+            .hamburger {
+                display: inline-block;
+                position: absolute;
+                top: 25px;
+                right: 0;
+                padding: 12px 25px;
+                color: $dark-blue;
+                cursor: pointer;
+
+                span {
+                    left: 0;
+                }
+
+                span, span:before, span:after {
+                    cursor: pointer;
+                    border-radius: 1px;
+                    height: 5px;
+                    width: 28px;
+                    background: $dark-blue;
+                    position: absolute;
+                    display: block;
+                    content: '';
+                    transition: background 500ms ease-in-out;
+                }
+
+                span:before {
+                    top: -10px;
+                    transition: all 500ms ease-in-out;
+                }
+
+                span:after {
+                    bottom: -10px;
+                    transition: all 500ms ease-in-out;
+                }
+
+                &.active {
+                    span {
+                        background-color: transparent;
+                    }
+
+                    span:before, &.active span:after {
+                        top: 0;
+                    }
+
+                    span:before {
+                        transition: all 500ms ease-in-out;
+                        transform: rotate(-45deg);
+                    }
+
+                    span:after {
+                        transition: all 500ms ease-in-out;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* == Footer ================================================= */
+footer {
+    background-color: $light-gray;
+    padding: 15px 25px;
+
+    .content-holder {
+        .social {
+            li i.icon {
+                height: 30px;
+                width: 30px;
+
+                svg {
+                    margin-bottom: -8px;
+
+                    path {
+                        fill: $white;
+                    }
+
+                    rect {
+                        fill: $white;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $light-blue;
+
+                            @include transition(all $transTime ease);
+                        }
+
+                        rect {
+                            fill: $light-blue;
+
+                            @include transition(all $transTime ease);
+                        }
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            text-align: center;
+            .copyright, .social {
+                width: 100%;
+            }
+            .social {
+                margin-top: 10px;
+            }
+        }
+    }
+}

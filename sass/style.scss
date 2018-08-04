@@ -1,0 +1,21 @@
+// Style.scss
+// 08/10/2015
+//
+// Global styles should be reused as often as possible with the
+// lowest specificity possible.
+
+@import "compass";
+@import "_base.scss";
+
+@import "framework/_mixins.scss";
+
+// == Global Styles ========================================== */
+@import "_global.scss";         // Elements that are reused across the site
+@import "_typography.scss";     // Type specific elements
+@import "_forms.scss";          // Forms and inputs
+@import "_navigation.scss";     // Navigation related elements
+@import "_pages.scss";          // Page specific styles
+
+
+// == Page Specific Styles =================================== */
+

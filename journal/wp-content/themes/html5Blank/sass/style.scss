@@ -1,0 +1,11 @@
+// Style.scss
+// 08/10/2015
+//
+// Global styles should be reused as often as possible with the
+// lowest specificity possible.
+
+@import "compass";
+
+
+// == Global Styles ========================================== */
+@import "_wordpress.scss";     	// Blog specific styles

@@ -1,0 +1,51 @@
+// =========================================================== */
+// == Variables ============================================== */
+// =========================================================== */
+
+    // == Fonts ============================================== */
+    @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,400italic,700,700italic);
+
+    $font-base-size: 18px;
+    $font-base-percentage: (($font-base-size / 16px) * 100) + 0%;
+    
+    $font-base-leading: 32px;
+    $font-base-kerning: .015em;
+    
+    $font-serif-family: 'Droid Serif', serif;
+    $font-sans-family: 'Montserrat', sans-serif;
+
+    // == Typography ========================================= */
+    $font-headings: $font-sans-family;
+    $font-paragraph: $font-serif-family;
+
+    // == Color Scheme ======================================= */
+    $dark-blue: #49c0b6;
+    $light-blue: #88d1d1;
+    $dark-gray: #414142;
+    $light-gray: #646466;
+    $white: #fff;
+    
+    // == Color Assignments ================================== */
+    $paragraph-color: $dark-gray;
+    $paragraph-accent: $dark-blue;
+
+    $link-color: $dark-blue;
+    $link-hover: $light-blue;
+    $link-active: $dark-blue;
+    $link-visited: $dark-blue;
+
+    $heading-color: $dark-gray;
+    // $heading-accent: $light-blue;
+
+    // == Column System ====================================== */
+    $max-width: 1200px;
+    $columns: 16;
+    $column-width: $max-width/$columns;
+
+    // == Transitions ======================================== */
+    $transTime: .5s;
+
+    // == Responsive Base Settings =========================== */
+    $mobile: "max-width: 767px";
+    $tablet: "only screen and (min-width: 768px) and (max-width: 1024px)"; // Device width range for Tablets
+    $phones: "only screen and (min-width: 320px) and (max-width: 360px)"; // Device width range for phones

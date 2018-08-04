@@ -1,0 +1,31 @@
+@function ems($target, $context: $font-base-size) {
+    @if $target == 0 {
+        @return 0;
+    }
+    @return $target / $context + 0em;
+}
+
+@function percent($width, $container-width: $max-width) {
+    @return percentage($width / $container-width);
+}
+
+@function leading($amount: 1, $context: $font-base) {
+    @return ems($font-base-line-height * $amount, $context);
+}
+
+@mixin col($n, $container-width: $max-width) {
+    width: percentage($n * $column-width / $container-width);
+}
+
+@mixin mediaQuery($screen-size, $restrict: "max-width") {
+    @media only screen and ($restrict: $screen-size) {
+        @content;
+    }
+}
+
+@mixin placeholderStyle {
+    ::-webkit-input-placeholder { @content; }
+    :-ms-input-placeholder { @content; }
+    ::-moz-placeholder { @content; }
+    :-moz-placeholder { @content; }
+}

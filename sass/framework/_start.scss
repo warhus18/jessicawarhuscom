@@ -1,0 +1,41 @@
+/* == Browser Fixes ========================================== */
+body, html { 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    margin:0;
+    padding:0;
+}
+
+* {
+    @include box-sizing(border-box);
+}
+
+img {
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+}
+
+input {
+    border: 1px solid #aaa;
+    padding: 1%;
+    outline: none;
+    margin: 0 0 1% 0;
+    height: 1%;
+}
+
+.centered {
+    max-width:$max-width;
+    margin: 0 auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    clear: both;
+}

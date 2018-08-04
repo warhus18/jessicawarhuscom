@@ -1,0 +1,677 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"dark",
+				"dark-gray"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"trans",
+				"transTime"
+			],
+			[
+				"overflow",
+				"overflow-y"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"trs",
+				"transTime"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"fon",
+				"font-family"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"ligh",
+				"light-blue"
+			],
+			[
+				"paddin",
+				"padding-right"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"top",
+				"topInfo"
+			],
+			[
+				"art",
+				"articleBlurb"
+			],
+			[
+				"ou",
+				"ourStaff"
+			],
+			[
+				"sideM",
+				"sideMenuHolder"
+			],
+			[
+				"25px",
+				"275px"
+			],
+			[
+				"side",
+				"sideMenuHolder"
+			],
+			[
+				"treatm",
+				"treatmentContent"
+			],
+			[
+				"treatme",
+				"treatment-area-list"
+			],
+			[
+				"treatment",
+				"treatmentContent"
+			],
+			[
+				"background",
+				"background-color"
+			],
+			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"paddi",
+				"padding-bottom"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"or",
+				"orange"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "journal/wp-content/themes/html5Blank/loop.php",
+			"settings":
+			{
+				"buffer_size": 1245,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "journal/wp-content/themes/html5Blank/index.php",
+			"settings":
+			{
+				"buffer_size": 814,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/* == Wordpress Specific Styles ============================== */\n.blog {\n	.loop-holder {\n		padding: 0;\n		.articles {\n			border: 2px solid #fff;\n			.post {\n				border: 2px solid #fff;\n				position: relative;\n				width: 25%;\n\n				img {\n	                width: 100%;\n	            }\n\n	            .articleWrapper {\n	                line-height: 0;\n	                position: relative;\n\n	                .overlay {\n	                	background-color: rgba(0, 0, 0, .8);\n	                    bottom: 0;\n	                    cursor: pointer;\n	                    left: 0;\n	                    overflow: hidden;\n	                    padding: 25px;\n	                    position: absolute;\n	                    top: 0;\n	                    width: 100%;\n	                    z-index: 3;\n\n	                    button, .button {\n						    border: 2px solid $dark-gray;\n						    color: $dark-gray;\n						    cursor: pointer;\n						    display: inline-block;\n						    font-family: $font-sans-family;\n						    font-size: ems(16px);\n						    font-weight: 700;\n						    letter-spacing: $font-base-kerning;\n						    margin: 15px 0;\n						    padding: 12px 15px;\n						    text-align: center;\n						    text-transform: uppercase;\n\n						    @include transition(background-color $transTime ease);\n\n						    @include border-radius(0);\n\n						    &:hover {\n						        background-color: $dark-gray;\n						        color: $white;\n\n						        @include transition(background-color $transTime ease);\n						    }\n\n						    &:visited {\n						        color: $dark-gray;\n\n						        &:hover {\n						            color: $white;\n						        }\n						    }\n\n						    &.white {\n						        background: none;\n						        border: 2px solid $white;\n						        color: $white;\n\n						        &:hover {\n						            background-color: $white;\n						            color: $dark-gray;\n\n						            @include transition(background-color $transTime ease);\n						        }\n						    }\n						}\n\n	                    div {\n	                        width: 90%;\n	                        margin: 0 auto;\n	                    }\n\n	                    h3 {\n	                    	margin-bottom: 0;\n	                    	margin-top: 15px;\n	                    }\n\n	                    h3, h4 {\n	                        color: #fff;\n	                        text-align: left;\n\n	                        @include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.25));\n	                    }\n	                }\n	            }\n\n	            .articleTile {\n	                @include opacity(.8);\n	            }\n\n				@media only screen and (max-width: 1500px) {\n	                width: 33.333%;\n	            }\n\n	            @media only screen and (max-width: 800px) {\n	                width: 50%;\n	            }\n\n	            @media only screen and (max-width: 600px) {\n	                width: 100%;\n	            }\n			}\n		}\n	}\n}\n\n.footer {\n	.content-holder {\n		.social {\n			.svg {\n				height: 30px;\n				margin-bottom: -8px;\n				width: 30px;\n\n				path {\n					fill: #fff;\n				}\n\n				#LinkedIn {\n					rect {\n	                    fill: #fff;\n	                }\n				}\n\n				&:hover {\n					path {\n						fill: #88d1d1;\n\n						@include transition(all .5s ease);\n					}\n\n					rect {\n	                    fill: #88d1d1;\n\n                    	@include transition(all .5s ease);\n	                }\n				}\n			}\n		}\n	}\n}\n",
+			"file": "journal/wp-content/themes/html5Blank/sass/_wordpress.scss",
+			"file_size": 2891,
+			"file_write_time": 1473689686000000,
+			"settings":
+			{
+				"buffer_size": 3363,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/_typography.scss",
+			"settings":
+			{
+				"buffer_size": 1772,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sass/_navigation.scss",
+			"settings":
+			{
+				"buffer_size": 7079,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Compass/Compass.sublime-build",
+	"command_palette":
+	{
+		"height": 400.0,
+		"selected_items":
+		[
+			[
+				"s",
+				"SassBeautify"
+			],
+			[
+				"sas",
+				"SassBeautify"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pakage",
+				"Package Control: List Packages"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"sass",
+				"SassBeautify"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 457.0
+	},
+	"console":
+	{
+		"height": 120.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/_pages.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/single.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-includes/post-template.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/functions.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-includes/post.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-includes/class-wp-customize-section.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-admin/includes/nav-menu.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/_base.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/_typography.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/_navigation.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/page.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/sass/_wordpress.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/footer.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/index.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/loop.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/header.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/js/scripts.js",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/sass/style.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/style.css",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/normalize.css",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/normalize.min.css",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/sass/leverage.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/sass/_forms.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/html5Blank/sass/_base.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/blankslate/footer.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/blankslate/page.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/blankslate/index.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/blankslate/header.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/header.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/footer.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/blankslate/loop.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/blankslate/pagination.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/themes/index.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-activate.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-config-sample.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-config.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-cron.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-load.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-blog-header.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/index.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/index.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal/wp-content/index.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/about.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/about-resume.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/lib/settings.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/lib/local.settings.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/.htaccess",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/js/jquery.allPages.js",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/style.css",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/_global.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/lib/functions.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/framework/_start.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/framework/_mixins.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/framework/_grid.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/framework/_flex.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/404.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/503.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/403.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/meta.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/start.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/vendor/_select2.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/vendor/_chosen.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/_forms.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-front-end-development.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-logo-design.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-taliesin-west.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-trapezium.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-cavity-crushers.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-seckel-capital.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-cosmetic-eyes.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-globe-international.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/contact.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-my-mothers-pretzels.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio-younglobe.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/leverage.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/style.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/framework/_framework.scss",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/js/jquery.contact.js",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sticky-header.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/project.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/lib/prettyDate.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/lib/install.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/config.rb",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/.gitignore",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/taliesin-west.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/portfolio/taliesin-west.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/js/jquery.includes.js",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/js/responsiveImg.js",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/js/responsiveImg.js.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/lib/sample.local.settings.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/lib/generateSitemap.php",
+		"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/sass/vendor/_styleGuide.scss",
+		"/Users/jessicawarhus/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_Wyoming.html",
+		"/Users/jessicawarhus/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_Utah.html",
+		"/Users/jessicawarhus/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_Colorado.html",
+		"/Users/jessicawarhus/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_ElPaso.html",
+		"/Users/jessicawarhus/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_NewMexico.html",
+		"/Users/jessicawarhus/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_Arizona.html",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/templates/page.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/LILA.sublime-project",
+		"/Users/jessicawarhus/Desktop/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_Utah.html",
+		"/Users/jessicawarhus/Desktop/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_NewMexico.html",
+		"/Users/jessicawarhus/Desktop/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_ElPaso.html",
+		"/Users/jessicawarhus/Desktop/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_Colorado.html",
+		"/Users/jessicawarhus/Desktop/Old Compy/Freelance/DPM/desertpeak/Accordions/Accordion_Template_Arizona.html",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/collection-loop.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/all-products.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/templates/page.vendor.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/all-international-products.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/related-products.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/product-loop.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/international.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/collection-template.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/templates/all-products.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/templates/all_products.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/templates/product.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/layout/theme.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/templates/collection.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/sass/_index.scss",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/sass/style.scss",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/sass/_headerNav.scss",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/assets/style.css",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/sass/_global.scss",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/templates/index.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/helper-homepage-products.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/product.liquid",
+		"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify/snippets/international-template.liquid"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/jessicawarhus/Desktop/Brolik/JAW_portfolio/journal",
+			"/Users/jessicawarhus/Desktop/Projects/020_Lila/006_website/shopify",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"custom post",
+			"$seckBlog",
+			"process",
+			"design",
+			"visual",
+			"wireframes",
+			"design",
+			"visual",
+			"message",
+			"name",
+			"Name",
+			"name",
+			"subnav",
+			">\n",
+			"portfolio",
+			"slideshow",
+			"tucker",
+			"slideshow_",
+			"vikin",
+			"lunchtime ",
+			"press",
+			"hr",
+			"content",
+			"pagination",
+			"search",
+			"hover",
+			"itali",
+			"Victori",
+			"cadco",
+			"southern",
+			"southern pride",
+			"southern",
+			"subnav",
+			"focusfoodservice",
+			"focus",
+			"cal-mil.jpg",
+			"cal",
+			"snap drape",
+			"staff-view"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "journal/wp-content/themes/html5Blank/loop.php",
+					"settings":
+					{
+						"buffer_size": 1245,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								890,
+								890
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 17.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "journal/wp-content/themes/html5Blank/index.php",
+					"settings":
+					{
+						"buffer_size": 814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								565,
+								565
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "journal/wp-content/themes/html5Blank/sass/_wordpress.scss",
+					"settings":
+					{
+						"buffer_size": 3363,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1692,
+								1692
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 733.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "sass/_typography.scss",
+					"settings":
+					{
+						"buffer_size": 1772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								889,
+								889
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 178.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "sass/_navigation.scss",
+					"settings":
+					{
+						"buffer_size": 7079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								484,
+								1445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 823.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 26.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 98.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"style",
+				"assets/style.css"
+			],
+			[
+				"global",
+				"sass/_global.scss"
+			],
+			[
+				"style.css",
+				"assets/style.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 307.0,
+	"status_bar_visible": true
+}

@@ -1,0 +1,135 @@
+$flexbox-support-threshold: -3;
+
+.display-flex {
+  display: -ms-flexbox;
+  @include display-flex;
+  
+  &.align-content {
+    &[data-align="center"] {
+      @include align-content(center);
+    }
+    &[data-align="flex-start"] {
+      @include align-content(flex-start);
+    }
+    &[data-align="flex-end"] {
+      @include align-content(flex-end);
+    }
+    &[data-align="space-around"] {
+      @include align-content(space-around)
+    }
+    &[data-align="space-between"] {
+      @include align-content(space-between);
+    }
+    &[data-align="stretch"] { // Default
+      @include align-content(stretch);
+    }
+  }
+  &.align-items {
+    &[data-items="baseline"] {
+      -ms-flex-align:baseline;
+      @include align-items(baseline);
+    }
+    &[data-items="center"] {
+      -ms-flex-align:center;
+      @include align-items(center);
+    }
+    &[data-items="flex-start"] {
+      -ms-flex-align:start;
+      @include align-items(flex-start);
+    }
+    &[data-items="flex-end"] {
+      -ms-flex-align:end;
+      @include align-items(flex-end);
+    }
+    &[data-items="stretch"] { // Default
+      -ms-flex-align:stretch;
+      @include align-items(stretch);
+    }
+  }
+  
+  &.flex-direction {
+    &[data-direction="row"] { // Default
+      @include flex-direction(row); 
+    }
+    &[data-direction="row-reverse"] {
+      @include flex-direction(row-reverse);
+    }
+    &[data-direction="column"] { 
+      @include flex-direction(column); 
+    }
+    &[data-direction="column-reverse"] {
+      @include flex-direction(column-reverse);
+    }
+  }
+  
+  &.flex-wrap {
+    &[data-wrap="nowrap"] { // Default
+      @include flex-wrap(nowrap);
+    }
+    &[data-wrap="wrap"] {
+      @include flex-wrap(wrap);
+    }
+    &[data-wrap="wrap-reverse"] {
+      @include flex-wrap(wrap-reverse);
+    }
+  }
+  
+  &.justify-content {
+    &[data-content="center"] {
+      -ms-flex-pack:center;
+      @include justify-content(center);
+    }
+    &[data-content="flex-start"] { // Default
+      -ms-flex-pack:start;
+      @include justify-content(flex-start);
+    }
+    &[data-content="flex-end"] {
+      -ms-flex-pack:end;
+      @include justify-content(flex-end);
+    }
+    &[data-content="space-around"] {
+      -ms-flex-pack:justify;
+      @include justify-content(space-around);
+    }
+    &[data-content="space-between"] {
+      -ms-flex-pack:justify;
+      @include justify-content(space-between);
+    }
+  }
+  
+  // Child Elements
+  .align-self {
+    &[data-self="auto"] {
+      @include align-self(auto);
+    }
+    &[data-self="baseline"] {
+      @include align-self(baseline);
+    }
+    &[data-self="center"] {
+      @include align-self(center);
+    }
+    &[data-self="flex-start"] {
+      @include align-self(flex-start);
+    }
+    &[data-self="flex-end"] {
+      @include align-self(flex-end);
+    }
+    &[data-self="streatch"] {
+      @include align-self(streatch);
+    }
+  }
+  
+  // Grow
+  @for $i from 1 through 5 {
+    .grow#{$i} {
+      @include flex-grow($i);
+    }
+  }
+  
+  // Order
+  @for $i from -5 through 5 {
+    .order#{$i} {
+      @include order($i);
+    }
+  }
+}

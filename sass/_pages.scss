@@ -1,0 +1,492 @@
+/* == About ======================================= */
+.About {
+    h2.intro {
+        font-size: ems(30px);
+        line-height: 45px;
+    }
+    .headshot {
+        text-align: center;
+
+        img {
+            overflow: hidden;
+
+            @include border-radius(50%);
+
+            max-width: 300px;
+
+            @media only screen and ($mobile) {
+                max-width: 250px;
+            }
+
+            @media only screen and (max-width: 600px) {
+                max-width: 200px;
+            }
+        }
+    }
+} 
+
+/* == Contact ======================================= */
+.Cavity.Crushers {
+    .portfolioContent {
+        @media only screen and ($mobile) {
+            .five {
+                order: 1;
+            }
+        }
+    }
+}
+
+/* == Contact ======================================= */
+.Contact {
+    .follow {
+        h2 {
+            font-family: $font-sans-family;
+            font-size: ems(32px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 38px;
+            margin: 18px 0 0;
+            text-transform: uppercase;
+        }
+
+        .contact {
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding: 3px 0;
+
+                &:before {
+                    content: '';
+                }
+
+                &.address {
+                    i.icon {
+                        width: 13px;
+                        height: 12px;
+                        margin-right: 10px;
+
+                        svg path {
+                            fill: $dark-blue;
+                        }
+                    }
+                }
+
+                &.email {
+                    @include transition(all $transTime ease);
+
+                    a {
+                        color: $dark-gray;
+                        font-weight: 400;
+
+                        &:hover {
+                            color: $dark-blue;
+                        }
+                    }
+
+                    i.icon {
+                        width: 16px;
+                        height: 12px;
+                        margin-right: 10px;
+
+                        svg path {
+                            fill: $dark-blue;
+                        }
+                    }
+                }
+            }
+        }
+
+        .social {
+            li i.icon {
+                height: 40px;
+                width: 40px;
+
+                svg {
+
+                    path {
+                        fill: $dark-blue;
+                    }
+
+                    rect {
+                        fill: $dark-blue;
+                    }
+                }
+
+                &:hover {
+                    svg {
+                        path {
+                            fill: $light-blue;
+
+                            @include transition(all $transTime ease);
+                        }
+
+                        rect {
+                            fill: $light-blue;
+
+                            @include transition(all $transTime ease);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* == Front-end Development ======================================= */
+.Front-end.Development {
+    @media only screen and (max-width: 1000px) {
+        .intro {
+            .eleven {
+                width: 63%;
+            }
+            .five {
+                width: 37%;
+            }
+        }
+    }
+
+    @media only screen and ($mobile) {
+        .intro {
+            .eleven {
+                width: 100%;
+            }
+            .five {
+                width: 100%;
+            }
+        }
+
+        .portfolioContent .content {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* == Globe International ======================================= */
+.Globe.International {
+    .oneFourth {
+        @media only screen and ($mobile) {
+            padding: 15px;
+            width: 25%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            padding: 25px;
+            width: 50%;
+        }
+
+        @media only screen and (max-width: 550px) {
+            padding: 15px;
+        }
+    }
+
+    @media only screen and (max-width: 1050px) {
+        .intro {
+            .eleven {
+                width: 61%;
+            }
+            .five {
+                width: 39%;
+            }
+        }
+    }
+
+    @media only screen and ($mobile) {
+        .intro {
+            .eleven {
+                width: 100%;
+            }
+            .five {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* == Home ======================================= */
+.Home {
+    .banner {
+        z-index: 5;
+        &.parallax {
+            background: no-repeat fixed center center / cover;
+            background-position: fixed;
+            background-size: cover;  
+            height: 100vh;
+            overflow: auto;
+            position: relative;
+            width: 100%;  
+            img {
+                min-height: 100vh;
+                min-width: 100%;
+            }
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .descriptionHolder {
+            height: 100%;
+            padding: 0 50px 25px;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            z-index: 6;
+            h1 {
+                font-size: ems(52px);
+                line-height: 58px;
+            }
+            h2 {
+                font-size: ems(30px);
+                line-height: 40px; 
+            }
+            h1, h2 {
+                color: $white;
+                // display: inline-block;
+                margin: 10px 0;
+                @include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.25));
+            }
+        }
+    }
+}
+
+/* == Logo Design ======================================= */
+.Logo.Design {
+	.intro {
+		padding-bottom: 0;
+	}
+    .portfolioContent {
+    	padding-top: 0;
+    	p.caption {
+    		font-size: 16px;
+    		font-style: italic;
+    		line-height: 24px;
+    		margin: 0 auto;
+    		max-width: 800px;
+    		padding-bottom: 25px;
+    	}
+    }
+}
+
+/* == Portfolio ======================================= */
+.Portfolio {
+    .projects {
+        .project {
+            position: relative;
+            width: 25%;
+
+            img {
+                width: 100%;
+            }
+
+            .projectWrapper {
+                line-height: 0;
+                position: relative;
+
+                .overlay {
+                    bottom: 0;
+                    cursor: pointer;
+                    left: 0;
+                    overflow: hidden;
+                    padding: 25px;
+                    position: absolute;
+                    text-align: center;
+                    top: 0;
+                    width: 100%;
+                    z-index: 3;
+
+                    @include display-flex;
+
+                    @include align-items(center);
+
+                    @include flex-wrap(wrap);
+
+                    /* === Project Specific Colors === */
+                    &.cc {
+                        &:hover {
+                            background-color: rgba(9, 83, 163, .8);
+                        }
+                    }
+                    &.gic {
+                        &:hover {
+                            background-color: rgba(0, 137, 204, .8);
+                        }
+                    }
+                    &.jw {
+                        &:hover {
+                            background-color: rgba(73, 192, 182, .8);
+                        }
+                    }
+                    &.mlcs {
+                        &:hover {
+                            background-color: rgba(67, 109, 187, .8);
+                        }
+                    }
+                    &.rfg {
+                        &:hover {
+                            background-color: rgba(74, 142, 217, .8);
+                        }
+                    }
+                    &.seck {
+                        &:hover {
+                            background-color: rgba(233, 114, 37, .8);
+                        }
+                    }
+                    &.tmc {
+                        &:hover {
+                            background-color: rgba(119, 184, 5, .8);
+                        }
+                    }
+                    &.tw {
+                        &:hover {
+                            background-color: rgba(0, 0, 0, .8);
+                        }
+                    }
+                    &.yg {
+                        &:hover {
+                            background-color: rgba(0, 145, 171, .8);
+                        }
+                    }
+
+                    div {
+                        line-height: $font-base-leading;
+                        width: 90%;
+                        margin: 0 auto;
+                    }
+
+                    h1, h2 {
+                        color: $white;
+                        @include text-shadow(1px 1px 1px rgba(0, 0, 0, 0.25));
+                    }
+
+                    .projectHover {
+                        position: relative;
+                        bottom: -300px;
+                        transition: all 0.65s ease;
+
+                        h2 {
+                            font-size: 1.25em;
+                        }
+
+                        @media #{$tablet} {
+                            h1 {
+                                font-size: 1.5em;
+                                line-height: 35px;
+                            }
+
+                            h2 {
+                                font-size: 1.15em;
+                                line-height: 28px;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .projectHover {
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            .projectTile {
+                @include opacity(.8);
+            }
+
+            @media only screen and (max-width: 1500px) {
+                width: 33.333%;
+            }
+
+            @media only screen and (max-width: 800px) {
+                width: 50%;
+            }
+
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+
+                .projectWrapper {
+                    max-height: 350px;
+                    overflow: hidden;
+
+                    .overlay {
+
+                        /* === Project Specific Colors === */
+                        &.cc {
+                            background-color: rgba(9, 83, 163, .8);
+                        }
+                        &.gic {
+                            background-color: rgba(0, 137, 204, .8);
+                        }
+                        &.jw {
+                            background-color: rgba(73, 192, 182, .8);
+                        }
+                        &.mlcs {
+                            background-color: rgba(67, 109, 187, .8);
+                        }
+                        &.rfg {
+                            background-color: rgba(74, 142, 217, .8);
+                        }
+                        &.seck {
+                            background-color: rgba(233, 114, 37, .8);
+                        }
+                        &.tmc {
+                            background-color: rgba(119, 184, 5, .8);
+                        }
+                        &.tw {
+                            background-color: rgba(0, 0, 0, .8);
+                        }
+
+                        .projectHover {
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* == Resume ======================================= */
+.Resume {
+    span.title {
+        color: $dark-blue;
+        font-family: $font-sans-family;
+        text-transform: uppercase;
+    }
+
+    h1 {
+        margin-bottom: 25px;
+    }
+
+    h4.sectionTitle {
+        color: $dark-gray;
+        font-family: $font-sans-family;
+        font-style: normal;
+        font-weight: 700;
+        margin-bottom: 0;
+        text-transform: uppercase;  
+    }
+
+    hr.mobile-only {
+        display: none;
+
+        @media only screen and ($mobile) {
+            display: block;
+        }
+    }
+
+    p {
+        margin-top: 10px;
+    }
+
+    .job {
+        margin-bottom: 15px;
+
+        .italic {
+            font-style: italic;
+        }
+    }
+}

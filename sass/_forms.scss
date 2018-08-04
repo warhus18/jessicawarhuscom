@@ -1,0 +1,77 @@
+/* == Inputs ================================================= */
+button {}
+
+input {
+    margin: 5px 0 10px;
+
+    &.button {
+        button, .button {
+            border: 2px solid $dark-gray;
+            color: $dark-gray;
+            cursor: pointer;
+            display: inline-block;
+            font-family: $font-sans-family;
+            font-size: ems(16px);
+            font-weight: 700;
+            letter-spacing: $font-base-kerning;
+            margin: 15px 0;
+            padding: 12px 15px;
+            text-align: center;
+            text-transform: uppercase;
+
+            @include transition(background-color $transTime ease);
+
+            @include border-radius(0);
+
+            &:hover {
+                background-color: $dark-gray;
+                color: $white;
+
+                @include transition(background-color $transTime ease);
+            }
+
+            &:visited {
+                color: $dark-gray;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+input[type="text"], input[type="email"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 1em;
+    color: $dark-blue;
+    font-family: $font-sans-family;
+    &:focus {
+        border: 1px solid $dark-blue;    
+        font-size: 1em;
+    }
+}
+
+label {
+    font-family: $font-sans-family;
+    color: $dark-gray;
+    text-transform: uppercase;
+    font-size: ems(16px);
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    color: $dark-blue;
+    font-family: $font-sans-family;
+    font-size: 1em;
+    min-height: 200px;
+    &:focus {
+        border: 1px solid $dark-blue; 
+        outline: none;    
+    }
+}
