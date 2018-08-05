@@ -1,4 +1,4 @@
 name: jessicawarhuscom
 recipe: wordpress
 config:
-    webroot: .
+  webroot: .
