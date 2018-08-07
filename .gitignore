@@ -5,20 +5,7 @@
 wp-content/uploads
 wp-content/upgrade/
 
-# Packages #
-############
-*.7z
-*.dmg
-*.gz
-*.bz2
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-*.tgz
 
-# Logs and databases #
-######################
-*.log
-*.sql
+# SASS #
+##########
+/wp-content/themes/portfolio/node_modules
