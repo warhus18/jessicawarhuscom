@@ -4,22 +4,14 @@
  ********************************************************************************/
 
 /* font declarations */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,400italic,700,700italic);
 
-$brand-font:                'montserratregular', sans-serif;
-$brand-font-b:              'montserratbold', sans-serif;
-$brand-font-i:              'montserratitalic', sans-serif;
-$brand-font-bi:             'montserratbold_italic', sans-serif;
-$brand-font-medium:         'montserratmedium', sans-serif;
-$brand-font-medium-i:       'montserratmedium_italic', sans-serif;
+$font-serif:                'Droid Serif', serif;
+$font-sans:                 'Montserrat', sans-serif;
 
-$data-font:                 'open_sansregular', sans-serif;
-$data-font-sb:              'open_sanssemibold', sans-serif;
-$data-font-b:               'open_sansbold', sans-serif;
-$data-font-i:               'open_sansitalic', sans-serif;
+$base-font:                 $font-serif;
 
-$base-font:                 $brand-font;
-
-$base-font-size:            16;
+$base-font-size:            18;
 $base-line-height:          1.5;
 $base-margin-bottom:        ($base-font-size * $base-line-height) * 1px;
 $base-vertical-margin:      16px;
@@ -28,15 +20,14 @@ $base-vertical-margin:      16px;
 
 $colors: (
     primary: (
-        base: #c3d941,
-        dark: #a3b536,
+        base: #88d1d1,
+        dark: #49c0b6,
     ),
     secondary: (
-        base: #0064d6,
-        dark: #003a7a,
-        darker: #002c5f,
+        base: #646466,
+        dark: #414142,
     ),
-        neutral: (
+    neutral: (
         lighter: #f1f1f1,
         light: #e1e1e1,
         base: #767676, /* lightest a11y grey on white */
@@ -52,6 +43,7 @@ $colors: (
         light: #fff
     )
 );
+
 
 /* color assignments */
 

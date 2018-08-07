@@ -1,0 +1,182 @@
+/* global typographic treatment */
+
+html,
+body {
+    // default typeface setup
+    @include line-height(16, 24);
+    @include font-size($base-font-size);
+
+    font-family: $base-font;
+    color: $text-color;
+
+    // make everything look a little nicer in webkit
+    -webkit-font-smoothing: antialiased;
+
+    @media
+        only screen and (-webkit-min-device-pixel-ratio: 1.25),
+        only screen and ( min-device-pixel-ratio: 1.25),
+        only screen and ( min-resolution: 200dpi),
+        only screen and ( min-resolution: 1.25dppx) { -webkit-font-smoothing: subpixel-antialiased; }
+}
+
+/* headers */
+
+// sass-lint:disable single-line-per-selector
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: $base-vertical-margin;
+    font-weight: normal;
+    color: color(secondary, darker);
+}
+
+h1,
+.h1 {
+    @include line-height(35, 43);
+    @include font-size(35);
+
+    font-family: $font-sans;
+}
+
+h2,
+.h2 {
+    @include line-height(28, 34);
+    @include font-size(28);
+
+    font-family: $font-sans;
+}
+
+h3,
+.h3 {
+    @include line-height(22, 27);
+    @include font-size(22);
+}
+
+h4,
+.h4 {
+    @include line-height(18, 22);
+    @include font-size(18);
+
+    font-family: $font-sans;
+}
+
+h5,
+.h5 {
+    @include line-height(12, 15);
+    @include font-size(12);
+
+    text-transform: uppercase;
+    color: color(neutral);
+}
+ 
+h6,
+.h6 { }
+
+
+/* basic typographic elements */
+
+address,
+p,
+ul,
+ol {
+    @include line-height(14, 24);
+    @include font-size(14);
+}
+
+ul,
+ol {
+    padding-left: 18px;
+
+    li { margin-top: 16px; }
+}
+
+ul { list-style-type: circle; }
+
+// blockquote
+blockquote { }
+
+// basic text link
+a {
+    color: $link-color; /* default color */
+
+    &:focus,
+    &:hover { text-decoration: none; }
+
+    @media (max-width: $screen-xs-max) {
+        word-break: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        overflow-wrap: break-word;
+    }
+}
+
+// address
+address { font-style: normal; }
+
+
+/* basic table element styling */
+
+table {
+    min-width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    // using @extend in case a class can't be manually attached <caption>
+    // `position: relative` fixes issue with table borders
+    caption {
+        // @extend .u-sr-only;
+        position: relative;
+    }
+
+    tr { background-color: color(default, light); }
+
+    th,
+    td {
+        border: 1px solid $border-color;
+        padding: 10px 14px;
+        vertical-align: top;
+        text-align: left;
+
+        &:first-child { border-left: 0; }
+        &:last-child { border-right: 0; }
+    }
+
+    th {
+        @include font-size(15);
+
+        color: color(secondary, darker);
+    }
+
+    td { @include font-size(14); }
+
+    thead {
+
+        tr:last-child th,
+        tr:last-child td { border-top: 0; }
+
+        th {
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+    }
+
+    tbody {
+
+        tr:last-child th,
+        tr:last-child td { border-bottom: 0; }
+
+        tr:nth-child(odd) th,
+        tr:nth-child(odd) td { background-color: color(neutral, lighter); }
+    }
+
+    tfoot {
+
+        tr:last-child th,
+        tr:last-child td { border-bottom: 0; }
+    }
+}
+ 
+/* code snippet */
+
+code { vertical-align: bottom; }
+ 
