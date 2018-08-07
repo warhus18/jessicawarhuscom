@@ -1,0 +1,913 @@
+/*
+ * Vertex - Design System - Base Styles
+ *
+ * CSS Build for partials that are unique to helping the Style Guide display
+ *
+ ********************************************************************************/
+
+
+/*
+ * style imports
+ *
+ ************************************************************/
+
+
+/*
+ * global
+ *
+ ****************************************/
+
+@import 'global/functions';
+@import 'global/variables';
+@import 'global/mixins';
+@import 'global/base';
+
+
+/*
+ * vendor
+ *
+ ****************************************/
+
+// vendor CSS unique to the design system
+@import 'vendor/prism-1.9.0';
+@import 'vendor/xrayhtml-2.1.3';
+
+
+/*
+ * Viking Color Palette variable references
+ *
+ ************************************************************/
+
+$vk-brand:                  color(primary);
+$vk-brand-dark:             color(primary, dark);
+
+$vk-neutral-extralight:     #fff;
+$vk-neutral-light:          #ccc;
+$vk-neutral:                #999;
+$vk-neutral-dark:           #333;
+$vk-neutral-extradark:      #000;
+
+$vk-site-background:        $site-background-color;
+$vk-content-background:     #f8f8f8;
+
+$vk-border:                 #e1e1e1;
+
+$vk-status-needed:          #cc4a4c;
+$vk-status-progress:        #4793e1;
+$vk-status-production:      #2eb572;
+
+
+/*
+ * Project Color Palette variable references
+ *
+ ************************************************************/
+
+// primary colors
+.primary-base                { background-color: color(primary); }
+.primary-dark                { background-color: color(primary, dark); }
+
+// secondary colors
+.secondary-base              { background-color: color(secondary); }
+.secondary-dark              { background-color: color(secondary, dark); }
+.secondary-darker            { background-color: color(secondary, darker); }
+
+// neutral colors
+.neutral-darker              { background-color: color(neutral, darker); }
+.neutral-dark                { background-color: color(neutral, dark); }
+.neutral-base                { background-color: color(neutral); }
+.neutral-light               { background-color: color(neutral, light); }
+.neutral-lighter             { background-color: color(neutral, lighter); }
+
+// utility colors
+.utility-error               { background-color: color(utility, error); }
+.utility-warning             { background-color: color(utility, warning); }
+
+// default colors
+.default-black               { background-color: color(default, dark); }
+.default-white               { background-color: color(default, light); }
+
+
+/*
+ * unique CSS for styleguide UI
+ *
+ ************************************************************/
+
+
+/*
+ * base treatment
+ *
+ ****************************************/
+
+html,
+body { background-color: $vk-site-background; }
+
+
+/*
+ * fixed left panel display
+ *
+ ****************************************/
+
+.vk-fixed-panel {
+    position: relative;
+    left: 0;
+    display: block;
+    width: 250px;
+    overflow: hidden;
+    transition: left .25s;
+}
+
+
+/*
+ * logo treatment for header and footer
+ *
+ ****************************************/
+
+.vk-logo {
+
+    img { transition: opacity .25s; }
+
+    &:hover img { opacity: .8; }
+
+    @include bem-m('header') {
+        position: fixed;
+        top: 0;
+        width: 250px;
+        height: 150px;
+        background-color: rgba($vk-neutral-extralight, .05);
+        text-align: center;
+
+        img {
+            @include vertical-align();
+
+            width: 175px;
+        }
+    }
+
+    @include bem-m('footer') {
+        width: 50%;
+        height: auto;
+    }
+}
+
+
+/*
+ * navigation hide button
+ *
+ ****************************************/
+
+.vk-nav-btn {
+    z-index: z-index(default);
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    background-color: $vk-brand;
+    transition: background-color .25s;
+
+    &:hover {
+        background-color: $vk-brand-dark;
+        cursor: pointer;
+    }
+
+    @include bem-e('icon') {
+        position: relative;
+        display: inline-block;
+        width: 14px;
+        height: 10px;
+        transition: .5s ease-in-out;
+
+        span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: $vk-neutral-extralight;
+            opacity: 1;
+            transition: .25s ease-in-out;
+
+            &:nth-child(1),
+            &:nth-child(4) {
+                top: 4px;
+                left: 50%;
+                width: 0;
+            }
+
+            &:nth-child(2) {
+                top: 4px;
+                transform: rotate(45deg);
+            }
+
+            &:nth-child(3) {
+                top: 4px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+// toggle state for hidden navigation and expanded content
+.is-hidden {
+
+    .vk-content__container {
+        margin-left: 0;
+        width: 100%;
+    }
+    .vk-fixed-panel { left: -250px; }
+
+    .vk-nav-btn {
+
+        .vk-nav-btn__icon span:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .vk-nav-btn__icon span:nth-child(2),
+        .vk-nav-btn__icon span:nth-child(3) {
+            left: 0;
+            transform: rotate(0);
+        }
+
+        .vk-nav-btn__icon span:nth-child(4) {
+            top: 8px;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+
+/*
+ * navigation panel
+ *
+ ****************************************/
+
+.vk-nav {
+
+    @include bem-e('container') {
+        z-index: 99;
+        position: fixed;
+        top: 150px;
+        bottom: 102px;
+        margin: 0;
+        border-right: 1px solid $border-color;
+        padding: 0;
+        width: 100%;
+        max-width: 250px;
+        overflow-y: auto;
+    }
+
+    @include bem-e('navigation') { }
+
+    @include bem-e('nav-container') {
+
+        @include bem-m('primary') {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            //height: calc(100% - 64px);
+            overflow-y: auto;
+        }
+
+        @include bem-m('secondary') {
+            display: none;
+            background-color: #f6f6f6;
+        }
+
+        @include bem-m('tertiary') {
+            display: none;
+            background-color: #f6f6f6;
+        }
+    }
+
+    @include bem-e('title') {
+        @include line-height(16, 28);
+        @include font-size(14);
+
+        display: none;
+        padding: 8px 20px;
+        width: 100%;
+        text-align: left;
+        font-family: $font-sans;
+        color: color(neutral, dark);
+    }
+
+    @include bem-e('list') { margin-bottom: 0; }
+
+    @include bem-e('item') {
+        margin-top: 0;
+        outline: 0;
+        border-top: 1px solid $border-color;
+        white-space: nowrap;
+        transition: background-color $transition-duration;
+
+        &:focus,
+        &:hover {
+            outline: 0;
+            background-color: color(default, light);
+        }
+
+        &:hover { cursor: pointer; }
+
+        &.is-expanded,
+        &.is-active {
+
+            // primary navigation - active
+            .vk-nav__nav-container--primary & {
+                background-color: color(secondary);
+
+                .vk-nav__link-text { color: color(default, light); }
+
+                > .vk-nav__link .vk-nav-toggle__icon::before,
+                > .vk-nav__link .vk-nav-toggle__icon::after { background-color: color(default, light); }
+            }
+
+            // secondary navigation - active
+            .vk-nav__nav-container--secondary & {
+                background-color: rgba(color(secondary), .1);
+                color: color(neutral, dark);
+
+                > .vk-nav__link .vk-nav-toggle__icon::before,
+                > .vk-nav__link .vk-nav-toggle__icon::after { background-color: color(secondary); }
+            }
+
+            .vk-nav__icon { fill: color(default, light); }
+        }
+
+        &.is-expanded > .vk-nav__link {
+
+            .vk-nav-toggle__icon::after { display: none; }
+        }
+    }
+
+    @include bem-e('link') {
+        @include line-height(16, 28);
+
+        position: relative;
+        display: block;
+        padding: ($grid-horizontal-padding / 2) ($grid-horizontal-padding * 2) ($grid-horizontal-padding / 2) $grid-horizontal-padding;
+        width: 100%;
+        text-align: left;
+        text-decoration: none;
+        color: color(neutral, dark);
+
+        &:focus,
+        &:hover { outline: 0; }
+
+        &:hover { cursor: pointer; }
+
+        .vk-nav__nav-container--primary & {
+            @include font-size(16);
+
+            height: 59px; /* magic value added to remove vertical shifting when text is collapsed */
+            font-family: $font-sans;
+        }
+
+        .vk-nav__nav-container--secondary & {
+            @include font-size(14);
+
+            padding-top: 8px;
+            padding-bottom: 8px;
+            height: auto;
+            font-family: $font-serif;
+        }
+
+        .vk-nav__nav-container--secondary & { padding-left: 65px; }
+    }
+
+    @include bem-e('icon') { fill: color(neutral, dark); }
+
+    @include bem-e('link-text') {
+        display: inline-block;
+        margin-left: 10px;
+        width: 100%;
+        overflow: hidden;
+        vertical-align: middle;
+        color: color(neutral, dark);
+    }
+}
+
+
+/*
+ * nav accordion collapse and expand button/icon
+ *
+ ****************************************/
+
+.vk-nav-toggle {
+
+    @include bem-e('icon') {
+        position: absolute;
+        top: calc(50% - 7px);
+        right: calc(0% + 25px); /* unit required to know how to treat position */
+        display: block;
+        margin: 0 auto;
+        width: 14px;
+        height: 14px;
+        transition: opacity $transition-duration;
+
+        &::before,
+        &::after {
+            position: absolute;
+            display: block;
+            background-color: color(secondary);
+            content: '';
+        }
+
+        &::before {
+            top: calc(50% - 1px);
+            width: 14px;
+            height: 2px;
+        }
+
+        &::after {
+            left: calc(50% - 1px);
+            width: 2px;
+            height: 14px;
+        }
+    }
+}
+
+
+/*
+ * badges
+ *
+ ****************************************/
+
+.vk-badge {
+    @include font-size(10);
+
+    display: inline-block;
+    border-radius: 9px;
+    padding: 0 4px;
+    min-width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 19px;
+    font-family: $font-sans;
+
+    // global margin-left
+    &:not(:first-child) { margin-left: 5px; }
+
+    // color states for badges
+    @include bem-m('added') {
+        background-color: #c8f08f;
+        color: #2d660a;
+    }
+    @include bem-m('updated') {
+        background-color: #c0e6ff;
+        color: #325c80;
+    }
+    @include bem-m('experimental') {
+        background-color: #ffd4a0;
+        color: #a53725;
+    }
+
+    // apply margin-left when within a nav link
+    .vk-nav__link & { margin-left: 5px; }
+}
+
+
+/*
+ * content container
+ *
+ ****************************************/
+
+.vk-site-container { overflow: hidden; }
+
+.vk-site-content {
+    position: absolute;
+    top: 0;
+    bottom: 102px;
+    width: 100%;
+}
+
+.vk-content {
+
+    @include bem-e('container') {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: 250px;
+        width: calc(100% - 250px);
+        overflow-y: auto;
+        transition: margin-left .25s,
+                    width .25s;
+    }
+
+    @include bem-e('inner') {
+        padding: $grid-vertical-padding $grid-horizontal-padding;
+
+        > *:first-child { margin-top: 0; }
+    }
+
+    @include bem-e('detail') {
+
+        > *:first-child { margin-top: 0; }
+
+        code {
+            margin: 0 2px;
+            border: color(neutral, dark) dashed 1px;
+            padding: 4px;
+            background: color(default, light);
+            color: #905; /* color taken from prism highlighting */
+        }
+    }
+
+    hr { margin: 3em 0; }
+}
+
+
+/*
+ * content title region
+ *
+ ****************************************/
+
+.vk-title {
+
+    @include bem-e('container') {
+        padding: 20px 40px;
+        width: auto;
+        min-height: 150px;
+        background-color: #fff;
+    }
+
+    @include bem-e('path') {
+        @include font-size(14);
+
+        color: $vk-neutral-dark;
+    }
+}
+
+
+/*
+ * content container components
+ *
+ ****************************************/
+
+.vk-well {
+    @include font-size(14);
+
+    border: 1px solid $vk-border;
+    padding: 20px;
+    background-color: $vk-neutral-extralight;
+}
+
+
+/*
+ * status indicator
+ *
+ ********************/
+
+.vk-status {
+
+    @include bem-e('list') {
+        margin: 20px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    @include bem-e('item') {
+        @include font-size(12);
+
+        display: inline-block;
+        margin: 0 0 0 10px;
+        border-radius: 3px;
+        padding: 5px 10px;
+        text-transform: uppercase;
+
+        &:first-child { margin-left: 0; }
+    }
+}
+
+.is-needed {
+    background-color: lighten($vk-status-needed, 35%);
+    color: $vk-status-needed;
+}
+
+.is-progress {
+    background-color: lighten($vk-status-progress, 30%);
+    color: $vk-status-progress;
+}
+
+.is-production {
+    background-color: lighten($vk-status-production, 50%);
+    color: $vk-status-production;
+}
+
+
+/*
+ * color palette display
+ *
+ ****************************************/
+
+.vk-color-palette {
+
+    @include bem-e('list') {
+        margin: 0 0 $base-line-height;
+        padding: 0;
+        list-style: none;
+
+        @include bem-m('primary') {
+
+            .vk-color-palette__item {
+                width: 175px;
+                height: 150px;
+            }
+
+            .vk-color-palette__text {
+                margin-bottom: 10px;
+                margin-left: -8px;
+                box-shadow: 0 1px 2px rgba($vk-neutral-extradark, .2);
+                padding: 10px 16px;
+                max-width: 155px;
+
+                // color palette content tab bend
+                &::after {
+                    position: absolute;
+                    bottom: -4px;
+                    left: 0;
+                    border-top: 2px solid $vk-neutral;
+                    border-right: 2px solid $vk-neutral;
+                    border-bottom: 2px solid transparent;
+                    border-left: 2px solid transparent;
+                    width: 4px;
+                    height: 4px;
+                    content: '';
+                }
+            }
+        }
+
+        @include bem-m('secondary') {
+
+            .vk-color-palette__item {
+                width: 140px;
+                height: 110px;
+                overflow: hidden;
+            }
+
+            .vk-color-palette__text {
+                margin-bottom: 0;
+                padding: 10px;
+                width: 100%;
+            }
+        }
+    }
+
+    @include bem-e('item') {
+        position: relative;
+        display: inline-block;
+        margin: 0 20px 20px 0;
+        border-radius: 8px;
+        border: 4px solid rgba($vk-neutral-extralight, .5);
+        text-align: left;
+    }
+
+    @include bem-e('text') {
+        @include font-size(12);
+
+        position: absolute;
+        bottom: 0;
+        background-color: $vk-neutral-extralight;
+        line-height: 14px;
+        color: $vk-neutral-dark;
+    }
+
+    @include bem-e('text-title') {
+        @include font-size(13);
+
+        color: $vk-neutral-extradark;
+    }
+
+    @include bem-e('text-hex') { }
+}
+
+
+/*
+ * icon list display
+ *
+ ****************************************/
+
+.vk-icon {
+
+    @include bem-e('list') {
+        margin: 0;
+        padding: 0;
+    }
+
+    @include bem-e('item') {
+        position: relative;
+        display: inline-block;
+        margin: 0 1em 1em 0;
+        border: 1px solid $vk-border;
+        background-color: $vk-neutral-extralight;
+        cursor: default;
+        vertical-align: top;
+    }
+
+    @include bem-e('box') {
+        position: relative;
+        display: table-cell;
+        margin: 0;
+        padding-bottom: 15px; /* re-aligning icon in box */
+        width: 220px;
+        //height: 144px;
+        height: 250px; /* 144px + 30px offset for label */
+        background-color: #eee;
+        background-image: linear-gradient(45deg, rgba($vk-brand-dark, .25) 25%,
+                          transparent 25%,
+                          transparent 75%,
+                          rgba($vk-brand-dark, .25) 75%,
+                          rgba($vk-brand-dark, .25)),
+                          linear-gradient(45deg, rgba($vk-brand-dark, .25) 25%,
+                          transparent 25%, transparent 75%,
+                          rgba($vk-brand-dark, .25) 75%,
+                          rgba($vk-brand-dark, .25));
+        background-position: 0 0, 6px 6px;
+        background-size: 12px 12px;
+        vertical-align: middle;
+        text-align: center;
+
+        &:hover { cursor: pointer; }
+
+        svg { transition: fill $transition-duration; }
+
+        &:focus svg,
+        &:hover svg {
+            cursor: pointer;
+            fill: $vk-brand;
+        }
+    }
+
+    @include bem-e('title') {
+        @include font-size(12);
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 4px 8px;
+        overflow: hidden;
+        background-color: rgba(color(default, light), .75);
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+
+/*
+ * syntax region display
+ * modifying vendor default styling of xrayhtml
+ *
+ ****************************************/
+
+pre {
+    @include font-size(12);
+
+    border-left: 5px solid $border-color;
+
+    // sass-lint:disable-block nesting-depth
+    &.code-toolbar {
+
+        > .toolbar {
+            margin-top: .5em;
+
+            a,
+            button,
+            span {
+                box-shadow: none;
+                border-radius: 2px;
+                padding: .5em;
+                background: $vk-neutral-dark;
+                text-decoration: none;
+                text-shadow: none;
+                color: $vk-neutral-extralight;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: $vk-neutral-extralight;
+                }
+            }
+        }
+    }
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] { background: rgba($vk-neutral-extralight, .03); }
+
+.xrayhtml {
+    margin-top: 50px;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+
+    .source-panel pre {
+        margin: 0;
+        border-radius: 0;
+        padding: 16px;
+    }
+
+    &.method-inline .source-panel {
+        margin: 40px 0 0 !important; // sass-lint:disable-line no-important
+        border-radius: 0;
+        border: 1px solid $vk-border;
+    }
+
+    .xraytitle {
+        top: -30px;
+        padding-right: .5em;
+        padding-left: 0;
+        background-color: color(neutral, lighter);
+    }
+
+    /*
+     * custom xrayhtml region settings for
+     *
+     ********************/
+
+    @include bem-m('global-navigation') {
+
+        .snippet {
+            position: relative;
+            width: 100%;
+            height: 600px;
+        }
+    }
+
+    @include bem-m('date-picker') {
+
+        .snippet { min-height: 190px; }
+    }
+
+    @include bem-m('buttons') {
+
+        .snippet > * {
+            margin-right: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    @include bem-m('global-header') {
+
+        .snippet {
+            position: relative;
+            height: 200px;
+        }
+    }
+
+    @include bem-m('global-footer') {
+
+        .snippet {
+            position: relative;
+            height: 200px;
+        }
+    }
+
+    @include bem-m('cookie-consent-custom') {
+
+        .snippet {
+            position: relative;
+            height: 200px;
+        }
+
+        .cc-window { position: absolute; }
+    }
+}
+
+
+/*
+ * footer layout
+ *
+ ************************************************************/
+
+.vk-site-footer {
+    @include line-height(10, 14);
+    @include font-size(12);
+
+    position: absolute;
+    bottom: 0;
+    padding: ($grid-vertical-padding / 2) $grid-horizontal-padding;
+    width: 100%;
+    background-color: color(neutral, dark);
+
+    p {
+        @include font-size(12);
+
+        color: $footer-text-color;
+    }
+
+    a { color: $footer-text-color; }
+
+    @include bem-e('legal') { }
+
+    @include bem-e('brand') {
+        text-align: center;
+
+        @media (min-width: $screen-xs-min) { text-align: left; }
+    }
+}

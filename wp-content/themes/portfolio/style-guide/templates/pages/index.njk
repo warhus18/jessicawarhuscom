@@ -1,0 +1,30 @@
+{% extends "partials/simple-layout.njk" %}
+
+{% set item_path = "../" %}
+
+{# status options: Needed | Progress | Producton #}
+{% set item_status_design = "Needed" %}
+{% set item_status_development = "Progress" %}
+{% set item_status_documentation = "Production" %}
+
+{# open content region for element/component #}
+{% block simpleContent %}
+<p><strong>CSS and JS updates are automatically added here when changes are made.</strong> HTML additions or updates will need to be added to the corresponding element or component include manually and distributed to the various properties.</p>
+<h2 class="h3">Summary</h2>
+<p>The {{ client }} {{ project }} enables teams to build rich web experiences and custom applications with elements and components that are established using best practices.</p>
+<h2 class="h3">Standards Compliant Markup</h2>
+<p>Semantic markup and use of ARIA roles on elements and components are based on W3C standards and industry best practices. The hope in doing this is that elements and components within the system provide a starting point for building accessible components and applications.</p>
+<h2 class="h3">Composition of the Style Guide</h2>
+<h3 class="h4">Elements</h3>
+<p>Elements are the most basic building blocks of any Vertex Inc. application providing a consistent starting point for user experience, design, and development teams to start their applications.</p>
+<h3 class="h4">Components</h3>
+<p>Components are the larger building blocks of Vertex Inc. applications &ndash; many times built from other smaller elements. These established components enable user experience, design, and development to use ready-to-go interface elements with provided HTML and CSS code.</p>
+<h3 class="h4">Sections</h3>
+<p>Much like Components, Sections are built from smaller pieces of the Style Guide. This generally means multiple Components being combined to create an interface section. Like Components, these are built to be reusable in different areas of the application.</p>
+<h3 class="h4">Pages</h3>
+<p>When appropriate, samples of building application layouts is provided to demonstrate how individual elements and components can be combined to create an entire layout.</p>
+<h2 class="h3">Application-Specific Components</h2>
+<p>Certain Components are currently only used in specific applications, so they have been broken out into a unique navigation section. For example (&ldquo;VE&rdquo; and &ldquo;Cloud&rdquo;). Additional Application-Specific Components and Sections will be added over time.</p>
+<h2 class="h3">Platform-Agnostic</h2>
+<p>The CSS framework outlined here can work with any technology stack &ndash; not limited to a specific platform or technology. Additionally, guidance is provided with each element and component around how and when to implement and use it.</p>
+{% endblock %}

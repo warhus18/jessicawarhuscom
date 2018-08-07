@@ -1,0 +1,88 @@
+{% extends "partials/simple-layout.njk" %}
+
+{% set item_path = "../../" %}
+{% set item_category = "Styles" %}
+{% set item_name = "Color" %}
+{% set item_scss_directory = "global" %}
+{% set item_scss_file = "variables" %}
+
+{# status options: Needed | Progress | Producton #}
+{% set item_status_design = "Production" %}
+{% set item_status_development = "Production" %}
+{% set item_status_documentation = "Progress" %}
+
+{# open content region for element/component #}
+{% block simpleContent %}
+<h3>Primary Colors</h3>
+<ul class="vk-color-palette__list vk-color-palette__list--primary">
+    <li class="vk-color-palette__item primary-base">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Primary</strong><br>
+            <span class="vk-color-palette__text-hex">#c3d941</span></p>
+    </li>
+    <li class="vk-color-palette__item primary-dark">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Primary (Dark)</strong><br>
+            <span class="vk-color-palette__text-hex">#a3b536</span></p>
+    </li>
+</ul>
+<h3>Secondary Colors</h3>
+<ul class="vk-color-palette__list vk-color-palette__list--primary">
+    <li class="vk-color-palette__item secondary-base">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Secondary</strong><br>
+            <span class="vk-color-palette__text-hex">#0064d6</span></p>
+    </li>
+    <li class="vk-color-palette__item secondary-dark">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Secondary (Dark)</strong><br>
+            <span class="vk-color-palette__text-hex">#003a7a</span></p>
+    </li>
+    <li class="vk-color-palette__item secondary-darker">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Secondary (Darker)</strong><br>
+            <span class="vk-color-palette__text-hex">#002c5f</span></p>
+    </li>
+</ul>
+<hr>
+<h3>Neutral Colors</h3>
+<ul class="vk-color-palette__list vk-color-palette__list--secondary">
+    <li class="vk-color-palette__item neutral-lighter">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Neutral (Lighter)</strong><br>
+            <span class="vk-color-palette__text-hex">#f1f1f1</span></p>
+    </li>
+    <li class="vk-color-palette__item neutral-light">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Neutral (Light)</strong><br>
+            <span class="vk-color-palette__text-hex">#e1e1e1</span></p>
+    </li>
+    <li class="vk-color-palette__item neutral-base">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Neutral</strong><br>
+            <span class="vk-color-palette__text-hex">#767676</span></p>
+    </li>
+    <li class="vk-color-palette__item neutral-dark">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Neutral (Dark)</strong><br>
+            <span class="vk-color-palette__text-hex">#484848</span></p>
+    </li>
+    <li class="vk-color-palette__item neutral-darker">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Neutral (Darker)</strong><br>
+            <span class="vk-color-palette__text-hex">#131313</span></p>
+    </li>
+</ul>
+<h3>Utility Colors</h3>
+<ul class="vk-color-palette__list vk-color-palette__list--secondary">
+    <li class="vk-color-palette__item utility-error">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Error</strong><br>
+            <span class="vk-color-palette__text-hex">#c9282d</span></p>
+    </li>
+    <li class="vk-color-palette__item utility-warning">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Warning</strong><br>
+            <span class="vk-color-palette__text-hex">#ffc600</span></p>
+    </li>
+</ul>
+<h3>Default Colors</h3>
+<ul class="vk-color-palette__list vk-color-palette__list--secondary">
+    <li class="vk-color-palette__item default-black">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">Black</strong><br>
+            <span class="vk-color-palette__text-hex">#000</span></p>
+    </li>
+    <li class="vk-color-palette__item default-white">
+        <p class="vk-color-palette__text"><strong class="vk-color-palette__text-title">White</strong><br>
+            <span class="vk-color-palette__text-hex">#fff</span></p>
+    </li>
+</ul>
+{% endblock %}

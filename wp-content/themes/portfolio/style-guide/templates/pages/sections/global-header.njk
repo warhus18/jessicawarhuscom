@@ -1,0 +1,220 @@
+{% extends "partials/code-layout.njk" %}
+
+{% set item_path = "../../" %}
+{% set item_category = "Section" %}
+{% set item_name = "Global Header" %}
+{% set item_scss_directory = "partial" %}
+{% set item_scss_file = "global-header" %}
+
+{# status options: Needed | Progress | Producton #}
+{% set item_status_design = "Production" %}
+{% set item_status_development = "Production" %}
+{% set item_status_documentation = "Progress" %}
+
+{# provide a detailed description of the element/component #}
+{% block description %}
+<p>A universal header with supporting utility links, messages, and account details that apply to all areas of the application.</p>
+{% endblock %}
+
+{# provide any necessary design guidelines or options for how the element/component looks #}
+{% block guidelines %}
+<ul>
+    <li>An application&rsquo;s name should follow the Vertex logo.</li>
+    <li>Keep navigation links short. Users should be able to identify links without relying on color. Underline is removed on hover.</li>
+    <li>Second level Account links may be housed under a drop-down menu.</li>
+</ul>
+{% endblock %}
+
+{# provide a breakdown of how and when the element/component should be used and if there are alternatives #}
+{% block usage %}
+<ul>
+    <li>Single-use component with text for each specific brand.</li>
+    <li>An optional utility navigation can be displayed with a small select group of links.</li>
+</ul>
+{% endblock %}
+
+{# code snippet for element/component #}
+{% block snippet %}
+<header class="site-header">
+    <div class="site-header__utility">
+        <div>
+            <div class="flyout__container flyout__container--app-toggle app-toggle" data-header-nav="toggle-container">
+                <button class="app-toggle__btn" data-header-nav="toggle">
+                    <span class="app-toggle__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span class="u-sr-only">Menu</span>
+                    </span>
+                </button>
+                <div class="flyout__panel">
+                    <ul class="u-list-unstyled flyout__list">
+                        <li class="flyout__item"><a href="#" class="flyout__link">Home</a></li>
+                        <li class="h5 flyout__item flyout__item--divider">Apps</li>
+                        <li class="flyout__item"><a href="#" class="flyout__link">Tax Accounting</a></li>
+                        <li class="flyout__item"><span class="flyout__link is-active">Data Preparation</span></li>
+                        <li class="flyout__item"><a href="#" class="flyout__link">Reconciliation</a></li>
+                        <li class="flyout__item"><a href="#" class="flyout__link">Returns</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-header__logo">
+                <img src="{{ item_path }}images/logo-vertex-inc-header.svg" alt="Vertex">
+            </div>
+            <div class="app-name__container">
+                <div class="u-text-uppercase app-name__text">Cloud Application</div>
+            </div>
+        </div>
+        <div class="u-text-right">
+            <div class="flyout__container flyout__container--context-selector context-selector__container" data-header-nav="toggle-container">
+                <div class="context-selector__inner" data-header-nav="toggle">
+                    <div class="context-selector__content">
+                        <span class="context-selector__date">01/29/2018</span>
+                        <span class="context-selector__name" data-context-select-ellipsis="title">Entity Name Placed Here</span>
+                        <span class="context-selector__info">(calperiod &sol; dataset &sol; ledger &sol; obligations)</span>
+                    </div>
+                    <div class="context-selector__btn">
+                        <span class="u-sr-only">Open Dropdown</span>
+                        <svg class="u-icon-chevron-down-dims">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-down"></use>
+                        </svg>
+                    </div>
+                </div>
+                <div class="flyout__panel">
+                    <div class="flyout__header">
+                        <span class="u-text-uppercase flyout__label">Global Display Settings</span>
+                        <button class="flyout__btn-close" data-context-select="close">
+                            <span class="u-sr-only">Close Global Display Settings</span>
+                            <svg class="u-icon-close-dims">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="container-fluid flyout__content">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label for="sg-date-picker">As of Date</label>
+                                <div class="date-picker__container">
+                                    <input type="text" id="sg-date-picker" name="sg-date-picker" placeholder="MM/DD/YYYY" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="sample-select-01">Entity</label>
+                                <select id="sample-select-01" name="sample-select-01" required>
+                                    <option value="" disabled="disabled" hidden="hidden" selected="selected">Select an Option</option>
+                                    <option value="0">First Option</option>
+                                    <option value="1">Another Option</option>
+                                    <option value="2">One Last Option</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row u-padding-top-md">
+                            <div class="col-sm-6">
+                                <label for="sample-select-02">Scenario</label>
+                                <select id="sample-select-02" name="sample-select-02" required>
+                                    <option value="" disabled="disabled" hidden="hidden" selected="selected">Select an Option</option>
+                                    <option value="0">First Option</option>
+                                    <option value="1">Another Option</option>
+                                    <option value="2">One Last Option</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="sample-select-03">Period</label>
+                                <select id="sample-select-03" name="sample-select-03" required>
+                                    <option value="" disabled="disabled" hidden="hidden" selected="selected">Select an Option</option>
+                                    <option value="0">First Option</option>
+                                    <option value="1">Another Option</option>
+                                    <option value="2">One Last Option</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row u-padding-top-md">
+                            <div class="col-sm-6">
+                                <label for="sample-select-04">Language</label>
+                                <select id="sample-select-04" name="sample-select-04" required>
+                                    <option value="" disabled="disabled" hidden="hidden" selected="selected">Select an Option</option>
+                                    <option value="0">First Option</option>
+                                    <option value="1">Another Option</option>
+                                    <option value="2">One Last Option</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="sample-select-05">Output Data Set</label>
+                                <select id="sample-select-05" name="sample-select-05" required>
+                                    <option value="" disabled="disabled" hidden="hidden" selected="selected">Select an Option</option>
+                                    <option value="0">First Option</option>
+                                    <option value="1">Another Option</option>
+                                    <option value="2">One Last Option</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row u-padding-top-md">
+                            <div class="col-sm-6">
+                                <label for="sample-select-06">Rate Source</label>
+                                <select id="sample-select-06" name="sample-select-06" required>
+                                    <option value="" disabled="disabled" hidden="hidden" selected="selected">Select an Option</option>
+                                    <option value="0">First Option</option>
+                                    <option value="1">Another Option</option>
+                                    <option value="2">One Last Option</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <label for="sample-select-07">Currency</label>
+                                <select id="sample-select-07" name="sample-select-07" required>
+                                    <option value="" disabled="disabled" hidden="hidden" selected="selected">Select an Option</option>
+                                    <option value="0">First Option</option>
+                                    <option value="1">Another Option</option>
+                                    <option value="2">One Last Option</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row u-padding-top-md">
+                            <div class="col-sm-12">
+                                <input type="submit" class="btn btn--primary" value="Apply" data-context-select="apply" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.flyout__panel -->
+            </div>
+            <!-- /.context-selector__container -->
+            <nav class="utility-nav__container">
+                <ol class="utility-nav__list">
+                    <li class="utility-nav__item"><a href="#" class="utility-nav__link">Utility Link 01</a></li>
+                    <li class="utility-nav__item"><a href="#" class="utility-nav__link">Utility Link 02</a></li>
+                </ol>
+            </nav>
+            <!-- /.utility-nav__container -->
+            <ul class="utility-control__container">
+                <li class="utility-control__item">
+                    <button class="utility-control__btn">
+                        <svg class="u-icon-mail-dims utility-control__icon">
+                            <use xlink:href="#mail"></use>
+                        </svg>
+                        <span class="u-sr-only utility-control__label">Notifications</span>
+                        <span class="badge badge--success utility-control__badge">187</span>
+                    </button>
+                </li>
+                <li class="flyout__container flyout__container--hover flyout__container--utility utility-control__item">
+                    <button class="utility-control__btn">
+                        <svg class="u-icon-account-dims utility-control__icon">
+                            <use xlink:href="#account"></use>
+                        </svg>
+                        <span class="u-sr-only utility-control__label">Account</span>
+                    </button>
+                    <div class="flyout__panel" data-header-i18n="panel">
+                        <ul class="u-list-unstyled flyout__list">
+                            <li class="flyout__item"><a href="#" class="flyout__link">First Account Child</a></li>
+                            <li class="flyout__item"><a href="#" class="flyout__link">Another Child</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <!-- /.utility-control__container -->
+        </div>
+    </div>
+    <!-- /.site-header__utility -->
+</header>
+<!-- /.site-header -->
+{% endblock %}

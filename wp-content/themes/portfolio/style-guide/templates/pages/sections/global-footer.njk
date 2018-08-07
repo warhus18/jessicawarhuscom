@@ -1,0 +1,53 @@
+{% extends "partials/code-layout.njk" %}
+
+{% set item_path = "../../" %}
+{% set item_category = "Section" %}
+{% set item_name = "Global Footer" %}
+{% set item_scss_directory = "partial" %}
+{% set item_scss_file = "global-footer" %}
+
+{# status options: Needed | Progress | Producton #}
+{% set item_status_design = "Production" %}
+{% set item_status_development = "Production" %}
+{% set item_status_documentation = "Progress" %}
+
+{# provide a detailed description of the element/component #}
+{% block description %}
+<p>Universal site footer with supporting and legal navigation links.</p>
+{% endblock %}
+
+{# provide any necessary design guidelines or options for how the element/component looks #}
+{% block guidelines %}
+<p>Users should be able to identify links without relying on color. Underline is removed on hover.</p>
+{% endblock %}
+
+{# provide a breakdown of how and when the element/component should be used and if there are alternatives #}
+{% block usage %}
+<p>Single use included at the bottom of the page.</p>
+{% endblock %}
+
+{# code snippet for element/component #}
+{% block snippet %}
+<footer class="site-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="{{ item_path }}images/logo-vertex-inc-footer.svg" alt="Vertex Inc. Logo">
+            </div>
+            <div class="col-sm-8 u-text-right">
+                <nav class="legal__nav">
+                    <ul class="u-list-inline">
+                        <li class="legal__item"><a class="legal__link" href="#">Terms of Use</a></li>
+                        <li class="legal__item"><a class="legal__link" href="#">Privacy Policy</a></li>
+                        <li class="legal__item">&copy; 2018 Vertex Inc. All Rights Reserved</li>
+                    </ul>
+                </nav>
+                <!-- /.site-footer__nav -->
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</footer>
+<!-- /.site-footer -->
+{% endblock %}

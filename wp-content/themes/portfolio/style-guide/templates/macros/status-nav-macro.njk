@@ -1,0 +1,32 @@
+{% macro buildStatusList(items, releaseVersion) %}
+<div class="tabular-data__container">
+    <table>
+        <caption>Breakdown of Style Guide Asset List and Status</caption>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Version Added</th>
+                <th scope="col">Version Last Updated</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for item in items|sort(attribute='title') %}
+        <tr>
+            <th scope="row">
+                <a href="{{ styleguide_path }}{{ item.directory }}/{{ item.title | lower | replace(" ", "-") }}.html" {% if item.targetBlank == "true" %}target="_blank" {% endif %}title="{{ item.title }}">{{ item.title }}</a>
+            </th>
+            <td>{{ item.sectionName }}</td>
+            <td>{{ item.added }}</td>
+            <td>{{ item.lastUpdated }}</td>
+            <td>
+                {% if item.isExperimental == "true" %}<span class="vk-badge vk-badge--experimental">E<span class="u-sr-only">xperimental</span></span>{% endif %}{% if item.lastUpdated == releaseVersion %}<span class="vk-badge vk-badge--updated">U<span class="u-sr-only">pdate</span></span>{% endif %}{% if item.added == releaseVersion %}<span class="vk-badge vk-badge--added">A<span class="u-sr-only">dded</span></span>{% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+<!-- /.tabular-data__container -->
+{% endmacro %}

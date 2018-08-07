@@ -1,0 +1,172 @@
+{% extends "partials/simple-layout.njk" %}
+
+{% set item_path = "../../" %}
+{% set item_category = "Element" %}
+{% set item_name = "Typography" %}
+{% set item_scss_directory = "partial" %}
+{% set item_scss_file = "typography" %}
+
+{# status options: Needed | Progress | Producton #}
+{% set item_status_design = "Production" %}
+{% set item_status_development = "Production" %}
+{% set item_status_documentation = "Progress" %}
+
+{# open content region for element/component #}
+{% block simpleContent %}
+<h2>Headers</h2>
+<div class="vk-well">
+    <h3 class="u-margin-hug-top">H1</h3>
+    <ul class="u-margin-hug">
+        <li><strong>Font Family:</strong> "Montserrat", sans-serif;</li>
+        <li><strong>Font Size:</strong> 35px</li>
+        <li><strong>Font Weight:</strong> Medium</li>
+        <li><strong>Color:</strong> #002c5f</li>
+        <li><strong>Text Transform:</strong> N/A</li>
+    </ul>
+</div>
+<div data-xrayhtml>
+    <h1>The quick brown fox jumps over the lazy dog</h1>
+    <p class="h1">The quick brown fox jumps over the lazy dog</p>
+</div>
+<hr/>
+<div class="vk-well">
+    <h3 class="u-margin-hug-top">H2</h3>
+    <ul class="u-margin-hug">
+        <li><strong>Font Family:</strong> "Montserrat", sans-serif;</li>
+        <li><strong>Font Size:</strong> 28px</li>
+        <li><strong>Font Weight:</strong> Medium</li>
+        <li><strong>Color:</strong> #002c5f</li>
+        <li><strong>Text Transform:</strong> N/A</li>
+    </ul>
+</div>
+<div data-xrayhtml>
+    <h2>The quick brown fox jumps over the lazy dog</h2>
+    <p class="h2">The quick brown fox jumps over the lazy dog</p>
+</div>
+<hr/>
+<div class="vk-well">
+    <h3 class="u-margin-hug-top">H3</h3>
+    <ul class="u-margin-hug">
+        <li><strong>Font Family:</strong> "Montserrat", sans-serif;</li>
+        <li><strong>Font Size:</strong> 22px</li>
+        <li><strong>Font Weight:</strong> Regular</li>
+        <li><strong>Color:</strong> #002c5f</li>
+        <li><strong>Text Transform:</strong> N/A</li>
+    </ul>
+</div>
+<div data-xrayhtml>
+    <h3>The quick brown fox jumps over the lazy dog</h3>
+    <p class="h3">The quick brown fox jumps over the lazy dog</p>
+</div>
+<hr/>
+<div class="vk-well">
+    <h3 class="u-margin-hug-top">H4</h3>
+    <ul class="u-margin-hug">
+        <li><strong>Font Family:</strong> "Montserrat", sans-serif;</li>
+        <li><strong>Font Size:</strong> 18px</li>
+        <li><strong>Font Weight:</strong> Medium</li>
+        <li><strong>Color:</strong> #002c5f</li>
+        <li><strong>Text Transform:</strong> N/A</li>
+    </ul>
+</div>
+<div data-xrayhtml>
+    <h4>The quick brown fox jumps over the lazy dog</h4>
+    <p class="h4">The quick brown fox jumps over the lazy dog</p>
+</div>
+<hr/>
+<div class="vk-well">
+    <h3 class="u-margin-hug-top">H5</h3>
+    <ul class="u-margin-hug">
+        <li><strong>Font Family:</strong> "Montserrat", sans-serif;</li>
+        <li><strong>Font Size:</strong> 12px</li>
+        <li><strong>Font Weight:</strong> Regular</li>
+        <li><strong>Color:</strong> #767676</li>
+        <li><strong>Text Transform:</strong> Uppercase</li>
+    </ul>
+</div>
+<hr/>
+<div data-xrayhtml>
+    <h5>The quick brown fox jumps over the lazy dog</h5>
+    <p class="h5">The quick brown fox jumps over the lazy dog</p>
+</div>
+<h3 id="typography-paragraph">Paragraph</h3>
+<p>The quick brown fox jumps over the lazy dog. Lorem ipsum dolor sit amet, <strong>strong text in a paragraph</strong>. Duis nulla tellus, cursus quis diam eget, facilisis consequat leo. Morbi rutrum odio ac risus gravida pellentesque eget nec dolor. Quisque sit amet mollis enim. Nullam aliquet vitae orci vitae feugiat. Proin eu euismod risus, vel pellentesque magna.</p>
+<p>Vivamus cursus turpis dui, <em>emphasized text in a paragraph</em>. Vestibulum nec porta magna. Morbi quam lorem, sollicitudin bibendum auctor et, rutrum eu sem. Nulla rutrum urna eu justo finibus tincidunt. Donec vehicula diam eget tempus eleifend. Aenean sodales, <a href="#test" title="Linked Text in a Paragraph">linked text in a paragraph</a>, sit amet lorem nec lacinia. Sed ultrices placerat est. Suspendisse vitae orci sollicitudin molestie est. Curabitur viverra tincidunt vestibulum. Vivamus consectetur nulla tortor, <strong><em>ultricies commodo nulla semper vel</em></strong>.</p>
+<h3 id="typography-ol">Ordered List</h3>
+<ol>
+    <li>The quick brown fox jumps over the lazy dog</li>
+    <li>Quisque at mi a nunc ornare tincidunt a non diam
+        <ul>
+            <li>The quick brown fox jumps over the lazy dog</li>
+            <li>In accumsan ut sapien nec porttitor</li>
+            <li>Quisque vitae libero quis ipsum dignissim efficitur</li>
+        </ul>
+    </li>
+    <li>Morbi sed dapibus nulla
+        <ol>
+            <li>The quick brown fox jumps over the lazy dog</li>
+            <li>In accumsan ut sapien nec porttitor</li>
+            <li>Quisque vitae libero quis ipsum dignissim efficitur</li>
+        </ol>
+    </li>
+</ol>
+<h3 id="typography-ul">Unordered List</h3>
+<ul>
+    <li>The quick brown fox jumps over the lazy dog</li>
+    <li>Quisque at mi a nunc ornare tincidunt a non diam
+        <ul>
+            <li>The quick brown fox jumps over the lazy dog</li>
+            <li>In accumsan ut sapien nec porttitor</li>
+            <li>Quisque vitae libero quis ipsum dignissim efficitur</li>
+        </ul>
+    </li>
+    <li>Morbi sed dapibus nulla
+        <ol>
+            <li>The quick brown fox jumps over the lazy dog</li>
+            <li>In accumsan ut sapien nec porttitor</li>
+            <li>Quisque vitae libero quis ipsum dignissim efficitur</li>
+        </ol>
+    </li>
+</ul>
+<h3 id="typography-hr">Horizontal Rule</h3>
+<p>The quick brown fox jumps over the lazy dog. Lorem ipsum dolor sit amet, <strong>strong text in a paragraph</strong>. Duis nulla tellus, cursus quis diam eget, facilisis consequat leo. Morbi rutrum odio ac risus gravida pellentesque eget nec dolor. Quisque sit amet mollis enim. Nullam aliquet vitae orci vitae feugiat. Proin eu euismod risus, vel pellentesque magna.</p>
+<div class="hr-rules">
+    <div class="hr-rules__rule-row">
+        <span class="hr-rules__rule hr-rules__rule--transparent hr-rules__rule--one"></span>
+        <span class="hr-rules__rule hr-rules__rule--two"></span>
+        <span class="hr-rules__rule hr-rules__rule--transparent hr-rules__rule--three"></span>
+        <span class="hr-rules__rule hr-rules__rule--four"></span>
+        <span class="hr-rules__rule hr-rules__rule--transparent hr-rules__rule--five"></span>
+    </div>
+    <div class="hr-rules__rule-row">
+        <span class="hr-rules__rule hr-rules__rule--six"></span>
+        <span class="hr-rules__rule hr-rules__rule--transparent hr-rules__rule--seven"></span>
+        <span class="hr-rules__rule hr-rules__rule--eight"></span>
+        <span class="hr-rules__rule hr-rules__rule--transparent hr-rules__rule--nine"></span>
+        <span class="hr-rules__rule hr-rules__rule--ten"></span>
+    </div>
+</div>
+<!-- /.hr-rules -->
+<p>Vivamus cursus turpis dui, <em>emphasized text in a paragraph</em>. Vestibulum nec porta magna. Morbi quam lorem, sollicitudin bibendum auctor et, rutrum eu sem. Nulla rutrum urna eu justo finibus tincidunt. Donec vehicula diam eget tempus eleifend. Aenean sodales, <a href="#test" title="Linked Text in a Paragraph">linked text in a paragraph</a>, sit amet lorem nec lacinia. Sed ultrices placerat est. Suspendisse vitae orci sollicitudin molestie est. Curabitur viverra tincidunt vestibulum. Vivamus consectetur nulla tortor, <strong><em>ultricies commodo nulla semper vel</em></strong>.</p>
+
+<h3>Tabular Data</h3>
+<p>The Open Sans is automatically applied to all tabular data to be more compact and increase readability of alphanumeric characters. Column headers should have their own unique styling, leveraging Open Sans, Semibold (<code>#002c5f</code>).</p>
+<div class="vk-well">
+    <h4 class="u-margin-hug-top">Header Cell</h4>
+    <ul class="u-margin-hug">
+        <li><strong>Font Family:</strong> "Open Sans Semi Bold", sans-serif;</li>
+        <li><strong>Font Size:</strong> 15px</li>
+        <li><strong>Font Weight:</strong> Regular</li>
+        <li><strong>Color:</strong> #002c5f</li>
+        <li><strong>Text Transform:</strong> N/A</li>
+    </ul>
+    <h4>Data Cell</h4>
+    <ul class="u-margin-hug">
+        <li><strong>Font Family:</strong> "Open Sans Regular", sans-serif;</li>
+        <li><strong>Font Size:</strong> 14px</li>
+        <li><strong>Font Weight:</strong> Regular</li>
+        <li><strong>Color:</strong> #131313</li>
+        <li><strong>Text Transform:</strong> N/A</li>
+    </ul>
+</div>
+{% endblock %}

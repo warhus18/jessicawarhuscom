@@ -1,0 +1,12 @@
+{# this file is dynamically built from variables - no updates are needed #}
+<div class="vk-title__container">
+    {% if item_category|length %}<span class="h5">{{ item_category }}</span>{% endif %}
+    <h1 class="u-margin-hug">{% if item_name|length == 0 %}{{ client }} | {{ project }}{% else %}{{ item_name }}{% endif %}</h1>
+    {% if item_scss_file|length %}
+    <span class="vk-title__path">
+        <strong>SCSS Location:</strong> <em>/styles/scss/{{ item_scss_directory }}/_{{ item_scss_file }}.scss</em>
+    </span>
+    {% endif %}
+    {% if item_name|length == 0 %}<p>{{ description }}</p>{% endif %}
+</div>
+<!-- /.vk-title__container -->
