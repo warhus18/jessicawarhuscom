@@ -102,7 +102,7 @@ gulp.task('styles-sass-lint', gulp.series(function() {
             'merge-default-rules': true
         },
         files: {
-            ignore: ['styles/vendor/*.scss', 'styles/vendor/**/*.scss', 'styles/global/_fonts.scss', 'styles/partial/_iconography.scss']
+            ignore: ['styles/global/_base.scss', 'styles/global/_functions.scss', 'styles/global/_mixins.scss', 'styles/global/_variables.scss', 'styles/partial/_iconography.scss']
         },
         configFile: '.sass-lint.yml'
     }))

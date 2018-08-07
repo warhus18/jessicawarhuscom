@@ -1,0 +1,171 @@
+/*
+ * site-wide variable declaration
+ *
+ ********************************************************************************/
+
+/* font declarations */
+
+$brand-font:                'montserratregular', sans-serif;
+$brand-font-b:              'montserratbold', sans-serif;
+$brand-font-i:              'montserratitalic', sans-serif;
+$brand-font-bi:             'montserratbold_italic', sans-serif;
+$brand-font-medium:         'montserratmedium', sans-serif;
+$brand-font-medium-i:       'montserratmedium_italic', sans-serif;
+
+$data-font:                 'open_sansregular', sans-serif;
+$data-font-sb:              'open_sanssemibold', sans-serif;
+$data-font-b:               'open_sansbold', sans-serif;
+$data-font-i:               'open_sansitalic', sans-serif;
+
+$base-font:                 $brand-font;
+
+$base-font-size:            16;
+$base-line-height:          1.5;
+$base-margin-bottom:        ($base-font-size * $base-line-height) * 1px;
+$base-vertical-margin:      16px;
+
+/* defined color map */
+
+$colors: (
+    primary: (
+        base: #c3d941,
+        dark: #a3b536,
+    ),
+    secondary: (
+        base: #0064d6,
+        dark: #003a7a,
+        darker: #002c5f,
+    ),
+        neutral: (
+        lighter: #f1f1f1,
+        light: #e1e1e1,
+        base: #767676, /* lightest a11y grey on white */
+        dark: #484848,
+        darker: #131313
+    ),
+    utility: (
+        error: #c9282d,
+        warning: #ffc600
+    ),
+    default: (
+        dark: #000,
+        light: #fff
+    )
+);
+
+/* color assignments */
+
+$site-background-color:     color(neutral, lighter);
+$text-color:                color(neutral, darker);
+$link-color:                color(secondary);
+$border-color:              color(neutral, light);
+
+$error-color:               color(utility, error);
+$info-color:                color(neutral, dark);
+$success-color:             color(primary, dark);
+$warning-color:             color(utility, warning);
+
+$footer-text-color:         #b5b5b5;
+
+
+/* defined z-indices map */
+
+$z-indexes: (
+    pit:        -9999,
+    basement:   0,
+    default:    1,
+    breakout:   10,
+    menus:      100,
+    dropdown:   2000,
+    overlay:    3000,
+    modal:      4000
+);
+
+
+/* bootstrap grid variables */
+
+// Extra small screen / phone
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm + 1 !default;
+
+// Medium screen / desktop
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+$screen-xl:                  1440px !default;
+$screen-xl-min:              $screen-xl !default;
+$screen-xl-desktop:          $screen-xl-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              ($screen-xl-min - 1) !default;
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//Default vertical padding
+$grid-vertical-padding:     30px !default;
+
+//Default horizontal padding
+$grid-horizontal-padding:   30px !default;
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+$container-tablet:             (720px + $grid-gutter-width) !default;
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet !default;
+
+// Medium screen / desktop
+$container-desktop:            (940px + $grid-gutter-width) !default;
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
+
+// Large screen / wide desktop
+$container-large-desktop:      (1390px + $grid-gutter-width) !default;
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop !default;
+
+
+/* global properties */
+
+$transition-duration: .25s;
+
+$border-radius: 3px;
+
+$box-shadow-default: 0 2px 10px 0 rgba(color(default, dark), .12), 0 2px 5px 0 rgba(color(default, dark), .12);
+$box-shadow-inset: inset 0 2px 10px 0 rgba(color(default, dark), .12), inset 0 2px 5px 0 rgba(color(default, dark), .12);
+ 
