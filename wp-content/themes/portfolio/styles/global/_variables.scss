@@ -3,11 +3,11 @@
  *
  ********************************************************************************/
 
-/* font declarations */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Droid+Serif:400,400italic,700,700italic);
-
-$font-serif:                'Droid Serif', serif;
-$font-sans:                 'Montserrat', sans-serif;
+$font-serif:                'ovoregular', serif;
+$font-sans:                 'montserratregular', sans-serif;
+$font-sans-i:               'montserratitalic', sans-serif;
+$font-sans-b:               'montserratextrabold', sans-serif;
+$font-sans-bi:              'montserratextrabold_italic', sans-serif;
 
 $base-font:                 $font-serif;
 
