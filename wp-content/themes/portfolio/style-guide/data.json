@@ -1,9 +1,9 @@
 {
-    "client": "Vertex Inc.",
+    "client": "Jessica Warhus Portfolio",
     "project": "Style Guide",
-    "description": "This website serves as a living document of the elements and components that make up the Vertex suite of applications. It's used to enhance communication between team members and aid in visual consistency and code maintainability.",
+    "description": "This is my style guide.",
     "version": "1.4.0",
-    "styleguide_path": "/vtx-design-system/",
+    "styleguide_path": "/wp-content/themes/portfolio/",
     "navItems": [
         {
             "menu_name": "Guidelines",
