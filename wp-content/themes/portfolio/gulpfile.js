@@ -101,7 +101,7 @@ gulp.task('styles-sass-lint', gulp.series(function() {
             'merge-default-rules': true
         },
         files: {
-            ignore: ['styles/global/_base.scss', 'styles/global/_functions.scss', 'styles/global/_mixins.scss', 'styles/global/_variables.scss', 'styles/partial/_iconography.scss']
+            ignore: ['styles/vendor/*.scss', 'styles/vendor/**/*.scss', 'styles/global/_fonts.scss', 'styles/partial/_iconography.scss']
         },
         configFile: '.sass-lint.yml'
     }))
@@ -113,7 +113,7 @@ gulp.task('styles-sass-lint', gulp.series(function() {
     }));
 }));
 
-gulp.task('svg-sprite-build', gulp.series(function() {
+gulp.task('svg-sprite-build', function() {
     const config = {
         mode: {
             symbol: { // symbol mode to build the SVG
@@ -122,8 +122,9 @@ gulp.task('svg-sprite-build', gulp.series(function() {
                         dest: '../../../../styles/partial/_iconography.scss'
                     }
                 },
+                inline: true,
                 prefix: '.u-icon-%s',
-                sprite: '../../../../images/sprite-ui.svg', //generated sprite name
+                sprite: '../../../../images/sprite-ui.svg' //generated sprite name
             }
         }
     };
@@ -138,9 +139,8 @@ gulp.task('svg-sprite-build', gulp.series(function() {
     .pipe(notify({
         message: '"SVG Sprite Build" Task Completed'
     }));
-
     return svgStream;
-}));
+});
 
 gulp.task('svg-sprite', gulp.series(['svg-sprite-build']));
 
