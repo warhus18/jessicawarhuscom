@@ -7,9 +7,9 @@
 			<!-- article -->
 			<article id="post-404">
 
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
+				<h1><?php _e( 'Page not found', 'portfolio' ); ?></h1>
 				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
+					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'portfolio' ); ?></a>
 				</h2>
 
 			</article>

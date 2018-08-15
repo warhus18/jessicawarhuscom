@@ -31,20 +31,28 @@
 			<!-- header -->
 			<header class="header clear" role="banner">
 
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
-					<!-- /logo -->
+				<!-- logo -->
+				<div class="logo">
+					<a href="<?php echo home_url(); ?>">
+						<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
+					</a>
+				</div>
+				<!-- /logo -->
 
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
-					<!-- /nav -->
+				<nav class="site-header__container-nav" data-header-nav="panel">
+					<?php
+						wp_nav_menu(
+							array(
+								'items_wrap'     => '<ol class="site-navigation__list" itemscope itemtype="http://www.schema.org/SiteNavigationElement">%3$s</ol>',
+								'container'      => false,
+								'menu_class'     => '',
+								'theme_location' => 'menu-main',
+							)
+						);
+					?>
+				</nav>
+				<!-- /.site-header__container-nav -->
 
 			</header>
 			<!-- /header -->
